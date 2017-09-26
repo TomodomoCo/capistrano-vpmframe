@@ -12,10 +12,10 @@ namespace :credentials do
     on roles(:app) do |host|
       if test("[ -f #{release_path}/config/wp-salts.php ]")
         info "wp-salts.php already exists on #{host}"
-			else
-				execute("echo '<?php' > #{release_path}/config/wp-salts.php && curl https://api.wordpress.org/secret-key/1.1/salt >> #{release_path}/config/wp-salts.php")
-			end
-		end
-	end
+      else
+        execute("echo '<?php' > #{release_path}/config/wp-salts.php && curl https://api.wordpress.org/secret-key/1.1/salt >> #{release_path}/config/wp-salts.php")
+      end
+    end
+  end
 
 end
