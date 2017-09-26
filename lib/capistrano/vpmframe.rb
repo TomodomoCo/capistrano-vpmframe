@@ -3,5 +3,6 @@ module Capistrano
   end
 end
 
+require "capistrano/vpmframe/alerts.rb"
 require "capistrano/vpmframe/assets.rb"
 require "capistrano/vpmframe/credentials.rb"
