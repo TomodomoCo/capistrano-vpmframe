@@ -3,5 +3,5 @@ module Capistrano
   end
 end
 
-require "capistrano/assets.rb"
-require "capistrano/credentials.rb"
+require "capistrano/vpmframe/assets.rb"
+require "capistrano/vpmframe/credentials.rb"
