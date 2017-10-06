@@ -13,7 +13,7 @@ namespace :assets do
   desc 'Upload static assets to the remote'
   task :upload do
     on roles(:app) do |host|
-      upload! "#{fetch(:assets_tmp_dir)}/#{fetch(:application)}/public/assets", "#{release_path}/public/", recursive: true
+      upload! "#{fetch(:assets_tmp_dir)}/#{fetch(:application)}/public/assets", "#{release_path}/#{feetch(:assets_deploy_dir)}/", recursive: true
     end
   end
 
