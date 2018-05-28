@@ -4,6 +4,12 @@ namespace :credentials do
   task :upload do
     on roles(:app) do |host|
       upload! "config/credentials", "#{shared_path}/config", recursive: true
+    end
+  end
+
+  desc 'Upload local secrets'
+  task :upload_secrets do
+    on roles(:app) do |host|
       upload! "config/secrets", "#{shared_path}/config", recursive: true
     end
   end
