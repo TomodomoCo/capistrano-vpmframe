@@ -14,6 +14,7 @@ namespace :build do
 
   desc 'Upload build artifacts'
   task :upload do
+    on roles(:app) do |host|
       fetch(:uploads).each do |path|
         puts "Uploading #{path}"
         upload! "#{fetch(:build_dir)}/#{fetch(:application)}/#{path}", "#{release_path}/#{path}", recursive: true
