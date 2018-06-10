@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'capistrano-vpmframe'
-  spec.version       = '1.6.0'
+  spec.version       = '1.7.0'
   spec.authors       = ['Chris Van Patten']
   spec.email         = ['info@vanpattenmedia.com']
   spec.description   = %q{Capistrano tasks for vpmframe websites}
   spec.summary       = %q{Capistrano tasks for vpmframe websites}
-  spec.homepage      = 'https://github.com/vanpattenmedia/capistrano-vpmframe'
+  spec.homepage      = 'https://github.com/tomodomoco/capistrano-vpmframe'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
