@@ -7,15 +7,15 @@ namespace :build do
     system( "git clone -b #{fetch(:branch)} #{fetch(:repo_url)} #{fetch(:build_dir)}/#{fetch(:application)}" )
   end
 
-  desc 'Compile, concatenate, and minify static assets'
-  task :compile do
+  desc 'Run the build'
+  task :build do
     system( "cd #{fetch(:build_dir)}/#{fetch(:application)} && make" )
   end
 
-  desc 'Upload static assets to the remote'
+  desc 'Upload build artifacts'
   task :upload do
-    on roles(:app) do |host|
-      on fetch(:uploads) do |path|
+      fetch(:uploads).each do |path|
+        puts "Uploading #{path}"
         upload! "#{fetch(:build_dir)}/#{fetch(:application)}/#{path}", "#{release_path}/#{path}", recursive: true
       end
     end
